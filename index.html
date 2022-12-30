@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+
+
+    <div class="slider-text-linha">
+        <input name="check-slide" id="check-slide-1" class="check-slide" type="radio">
+        <input name="check-slide" id="check-slide-2" class="check-slide" type="radio">
+        <input name="check-slide" id="check-slide-3" class="check-slide" type="radio">
+        <input name="check-slide" id="autoplay" class="check-slide" type="radio" checked>
+
+        <div class="slides-background">
+            <div class="background background-1"><h1>
+                <div class="text-background" ><i class="fa fa-truck"></i>Livraison offerte dès 60€ d'achats</div></h1>
+            </div>
+            <div class="background background-2"><h1>Paiement en 3X sans frais !</h1></div>
+            <div class="background background-3"><h1>3</h1></div>
+			<div class="background background-3"><h1>Télécharge l'app pour plus de bons plans</h1></div>
+        </div>
+        <div class="slides-texts">
+            <div class="h1">Livraison offerte dès 60€ d'achats</div>
+            <div class="h1">Télécharge l'app pour plus de bons plans</div>
+            <div class="h1">Paiement en 3X sans frais !</div>
+        </div>
+        <div class="slides-circle">
+
+        </div>
+    </div>
+
+
+
+    <style>
+		.background>h1{
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+			font-family: 'Open Sans',sans-serif !important;
+			font-size: x-large;
+			font-style: italic;
+			font-weight: 300px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+.slider-text-linha {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	color: white;
+}
+
+#check-slide-1:checked ~ .slides-background > .background-1 {
+	margin-left: 0;
+	z-index: 1;
+	opacity: 1;
+}
+
+#check-slide-1:checked ~ .slides-background > .background-2 {
+	margin-left: -100%;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-1:checked ~ .slides-background > .background-3 {
+	margin-left: -100%;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-2:checked ~ .slides-background > .background-1 {
+	margin-left: -100%;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-2:checked ~ .slides-background > .background-2 {
+	margin-left: 0;
+	z-index: 1;
+	opacity: 1;
+}
+
+#check-slide-2:checked ~ .slides-background > .background-3 {
+	margin-left: -100%;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-3:checked ~ .slides-background > .background-1 {
+	margin-left: -100;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-3:checked ~ .slides-background > .background-2 {
+	margin-left: -100%;
+	z-index: -1;
+	opacity: 0;
+}
+
+#check-slide-3:checked ~ .slides-background > .background-3 {
+	margin-left: 0;
+	z-index: 1;
+	opacity: 1;
+}
+
+.slides-background {
+	background: #686868;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+}
+
+.slider-text-linha > .check-slide {
+	display: none;
+	position: relative;
+}
+
+.slides-background > .background {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 2s ease;
+	margin: 0 auto;
+}
+
+.slides-background > .background > .text-background {
+	position: absolute;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 2vw;
+}
+
+
+.slides-background > .background-1 {
+	background-color: #686868;
+	opacity: 1;
+	z-index: 1;
+}
+
+.slides-background > .background-2 {
+	background-color: #686868;
+	opacity: 0;
+	z-index: -1;
+}
+
+.slides-background > .background-3 {
+	background-color: #686868;
+	opacity: 0;
+	z-index: -1;
+}
+
+#autoplay:checked ~ .slides-background > .background-1 {
+	animation: animate-1 15s ease-in-out infinite;
+}
+
+#autoplay:checked ~ .slides-background > .background-2 {
+	animation: animate-2 15s ease-in-out infinite;
+}
+
+#autoplay:checked ~ .slides-background > .background-3 {
+	animation: animate-3 15s ease-in-out infinite;
+}
+
+@keyframes animate-1 {
+	0% {
+		margin-left: 100%;
+		z-index: -1;
+		opacity: 0;
+	}
+	5%, 34% {
+		margin-left: 0;
+		z-index: 1;
+		opacity: 1;
+	}
+	39%, 100% {
+		margin-left: -100%;
+		z-index: -1;
+		opacity: 0;
+	}
+}
+
+@keyframes animate-2 {
+	0%, 34% {
+		margin-left: 100%;
+		z-index: -1;
+		opacity: 0;
+	}
+	39%, 67% {
+		margin-left: 0;
+		z-index: 1;
+		opacity: 1;
+	}
+	72%, 100% {
+		margin-left: -100%;
+		z-index: -1;
+		opacity: 0;
+	}
+}
+
+@keyframes animate-3 {
+	0% {
+		margin-left: 0;
+		z-index: 1;
+		opacity: 1;
+	}
+	5%, 39% {
+		margin-left: -100%;
+		z-index: -1;
+		opacity: 0;
+	}
+	67% {
+		margin-left: 100%;
+		z-index: -1;
+		opacity: 0;
+	}
+	72%, 100% {
+		margin-left: 0;
+		z-index: 1;
+		opacity: 1;
+	}
+}
+
+
+
+
+
+.slider-text-linha > #autoplay:checked ~ .slides-circle > .circle-1 {
+	animation: animate-dot-1 15s ease-in-out infinite;
+}
+
+.slider-text-linha > #autoplay:checked ~ .slides-circle > .circle-2 {
+	animation: animate-dot-2 15s ease-in-out infinite;
+}
+
+.slider-text-linha > #autoplay:checked ~ .slides-circle > .circle-3 {
+	animation: animate-dot-3 15s ease-in-out infinite;
+}
+
+
+
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
